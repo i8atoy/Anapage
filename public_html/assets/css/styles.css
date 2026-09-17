@@ -684,6 +684,50 @@ a.contact-method:focus-visible .contact-method-value {
   min-height: 44rem;
 }
 
+/* Not-found page */
+
+.not-found {
+  min-height: calc(100vh - 5.25rem);
+  padding: clamp(4rem, 9vw, 8rem) var(--page-pad);
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.75fr) minmax(24rem, 1.25fr);
+  align-items: center;
+  gap: var(--section-gap);
+}
+
+.not-found-code {
+  margin: 0;
+  color: var(--stone);
+  font-size: clamp(9rem, 23vw, 21rem);
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  line-height: 0.72;
+}
+
+.not-found-copy {
+  max-width: 48rem;
+}
+
+.not-found-copy h1 {
+  max-width: 12ch;
+  margin-bottom: 2rem;
+  font-size: clamp(3.2rem, 6.5vw, 6.8rem);
+}
+
+.not-found-copy > p:not(.eyebrow) {
+  max-width: 38rem;
+  margin-bottom: 2.25rem;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.not-found-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 /* Footer and keyboard focus */
 
 .site-footer {
@@ -788,6 +832,15 @@ a.contact-method:focus-visible .contact-method-value {
 
   .ai-copy {
     align-self: start;
+  }
+
+  .not-found {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .not-found-code {
+    font-size: clamp(8rem, 35vw, 16rem);
   }
 }
 
@@ -904,6 +957,16 @@ a.contact-method:focus-visible .contact-method-value {
     min-height: 38rem;
   }
 
+  .not-found {
+    min-height: calc(100vh - 4.75rem);
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .not-found-copy h1 {
+    font-size: clamp(3rem, 14vw, 4.8rem);
+  }
+
   .industry-list {
     grid-template-columns: 1fr;
   }
@@ -942,8 +1005,14 @@ a.contact-method:focus-visible .contact-method-value {
     flex-direction: column;
   }
 
-  .button {
+  .button,
+  .not-found-actions {
     width: 100%;
+  }
+
+  .not-found-actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .statement {
