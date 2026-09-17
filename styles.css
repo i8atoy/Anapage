@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("assets/fonts/CrimsonPro-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
 :root {
   --canvas: #f3f1ed;
   --paper: #faf9f6;
@@ -28,7 +36,7 @@ body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Crimson Pro", Georgia, serif;
   font-size: 1rem;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -94,9 +102,8 @@ h2 {
 }
 
 .header-inner {
-  width: min(100%, var(--max-width));
+  width: 100%;
   min-height: 5.25rem;
-  margin: 0 auto;
   padding: 0 var(--page-pad);
   display: flex;
   align-items: center;
@@ -125,6 +132,10 @@ h2 {
 
 .main-nav a:hover,
 .main-nav a:focus-visible {
+  border-color: currentColor;
+}
+
+.main-nav a[aria-current="page"] {
   border-color: currentColor;
 }
 
@@ -647,57 +658,149 @@ h2 {
   background: var(--beige);
 }
 
-.site-footer {
-  padding: 4rem var(--page-pad) 2rem;
+.contact-hero {
+  min-height: calc(100vh - 5.25rem);
   display: grid;
-  grid-template-columns: 1.4fr 1fr 0.7fr;
-  gap: 3rem;
-  background: var(--stone);
+  grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 0.92fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-page-copy {
+  padding: clamp(3rem, 5vw, 5rem) var(--page-pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contact-page-copy h1 {
+  max-width: 12ch;
+  margin-bottom: 2rem;
+  font-size: clamp(3.5rem, 6.7vw, 7rem);
+}
+
+.contact-page-intro {
+  max-width: 38rem;
+  margin-bottom: 2.75rem;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.contact-methods {
+  max-width: 44rem;
   border-top: 1px solid var(--line);
 }
 
-.footer-brand p {
-  margin: 0.7rem 0 0;
-  color: var(--muted);
+.contact-method {
+  min-height: 4.5rem;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(7rem, 0.65fr) minmax(12rem, 1.35fr);
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.footer-contact,
-.footer-social {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
+a.contact-method:hover .contact-method-value,
+a.contact-method:focus-visible .contact-method-value {
+  color: var(--blue);
 }
 
-.footer-contact a {
-  border-bottom: 1px solid transparent;
+.contact-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.footer-contact a:hover,
-.footer-contact a:focus-visible {
-  border-color: currentColor;
+.contact-icon-fill {
+  fill: var(--blue);
+  stroke: none;
 }
 
-.footer-label {
-  margin-bottom: 0.75rem;
-  color: var(--muted);
+.contact-method-label {
+  color: var(--blue);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
-.footer-social span {
-  color: var(--muted);
+.contact-method-value {
+  color: var(--ink);
+  font-size: 1.05rem;
+  transition: color 160ms ease;
 }
 
-.footer-copy {
-  grid-column: 1 / -1;
-  margin: 2rem 0 0;
-  padding-top: 1.5rem;
+.contact-photo {
+  position: relative;
+  min-height: 44rem;
+  margin: 0;
+  overflow: hidden;
+  background: var(--stone);
+}
+
+.contact-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.contact-photo::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: clamp(1.5rem, 4vw, 4rem);
+  background: rgba(243, 241, 237, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.32);
+  border-right: 1px solid rgba(32, 34, 36, 0.08);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  pointer-events: none;
+}
+
+.site-footer {
+  padding: 1.25rem var(--page-pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--stone);
   border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.footer-details {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.footer-details > * {
+  padding: 0 1rem;
+  border-left: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.footer-details > *:last-child {
+  padding-right: 0;
+}
+
+.footer-details a {
+  border-bottom: 1px solid transparent;
+}
+
+.footer-details a:hover,
+.footer-details a:focus-visible {
+  color: var(--ink);
+  border-color: currentColor;
 }
 
 :focus-visible {
@@ -719,6 +822,23 @@ h2 {
   }
 
   .hero-media::before {
+    inset: 0 0 auto;
+    width: auto;
+    height: 2.5rem;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.32);
+    border-bottom: 1px solid rgba(32, 34, 36, 0.08);
+  }
+
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-photo {
+    min-height: min(82vh, 52rem);
+  }
+
+  .contact-photo::before {
     inset: 0 0 auto;
     width: auto;
     height: 2.5rem;
@@ -842,6 +962,28 @@ h2 {
     min-height: 31rem;
   }
 
+  .contact-page-copy {
+    padding-top: 3.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .contact-page-copy h1 {
+    font-size: clamp(3.1rem, 15vw, 5rem);
+  }
+
+  .contact-method {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.7rem 1rem;
+  }
+
+  .contact-method-value {
+    grid-column: 2;
+  }
+
+  .contact-photo {
+    min-height: 38rem;
+  }
+
   .service-list li {
     grid-template-columns: 2.25rem 1fr;
   }
@@ -858,12 +1000,23 @@ h2 {
   }
 
   .site-footer {
-    grid-template-columns: 1fr 1fr;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .footer-brand,
-  .footer-copy {
-    grid-column: 1 / -1;
+  .footer-details {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 0.65rem;
+  }
+
+  .footer-details > *:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 }
 
@@ -881,13 +1034,9 @@ h2 {
     min-height: 60vh;
   }
 
-  .site-footer {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-brand,
-  .footer-copy {
-    grid-column: 1;
+  .footer-details > * {
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
   }
 }
 
