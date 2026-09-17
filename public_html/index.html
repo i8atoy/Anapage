@@ -8,52 +8,56 @@
       content="Texte scrise cu strategie pentru brandul tău. Ana Ștefănel, content writer cu mai bine de 10 ani experiență."
     />
     <meta name="theme-color" content="#f3f1ed" />
-    <title>Ana Stefanel — Content writer</title>
+    <title>Ana Stefanel — Specialist în comunicare</title>
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23345b8c'/%3E%3Cpath d='M18 46 29.5 17h5L46 46h-6.5l-2.7-7H27l-2.6 7H18Zm11-12h6l-3-8.4L29 34Z' fill='%23f3f1ed'/%3E%3C/svg%3E"
+      href="assets/icons/favicon.svg"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#continut">Sari la conținut</a>
 
-    <header class="site-header" data-header>
-      <div class="header-inner">
-        <a
-          class="brand"
-          href="#acasa"
-          aria-label="Ana Stefanel — pagina principală"
-        >
-          Ana Stefanel
-        </a>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="#acasa"
+        aria-label="Ana Stefanel — pagina principală"
+      >
+        Ana Stefanel
+      </a>
 
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="main-navigation"
-          data-menu-toggle
-        >
-          <span class="menu-toggle-label">Meniu</span>
-          <span class="menu-toggle-lines" aria-hidden="true"></span>
-        </button>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        data-menu-toggle
+      >
+        <span>Meniu</span>
+        <span class="menu-toggle-lines" aria-hidden="true"></span>
+      </button>
 
-        <nav
-          class="main-nav"
-          id="main-navigation"
-          aria-label="Navigare principală"
-          data-menu
-        >
-          <a href="#ce-fac">Ce fac</a>
-          <a href="#experienta">Experiență</a>
-          <a href="#cum-lucram">Cum lucrăm</a>
-          <a href="#preturi">Prețuri</a>
-          <a class="nav-contact" href="contact.html">Contact</a>
-        </nav>
-      </div>
+      <nav
+        class="main-nav"
+        id="main-navigation"
+        aria-label="Navigare principală"
+        data-menu
+      >
+        <a href="#ce-fac">Ce fac</a>
+        <a href="#experienta">Experiență</a>
+        <a href="#cum-lucram">Cum lucrăm</a>
+        <a href="#preturi">Prețuri</a>
+        <a class="nav-contact" href="contact.html">Contact</a>
+      </nav>
+
+      <div
+        class="menu-backdrop"
+        data-menu-backdrop
+        aria-hidden="true"
+      ></div>
     </header>
 
     <main id="continut">
@@ -80,7 +84,7 @@
 
         <figure class="hero-media">
           <img
-            src="images/IMG_7103.JPG.PNG"
+            src="assets/images/hero.png"
             alt="Ana Ștefănel, content writer"
             width="1145"
             height="1374"
@@ -89,9 +93,9 @@
       </section>
 
       <section class="fit-section section" aria-labelledby="fit-title">
-        <div class="section-heading">
+        <header class="section-heading">
           <h2 id="fit-title">Dacă îți dorești:</h2>
-        </div>
+        </header>
         <div class="fit-list">
           <p>conținut coerent, nu texte doar „să fie”</p>
           <p>colaborare eficientă</p>
@@ -107,7 +111,7 @@
         id="ce-fac"
         aria-labelledby="services-title"
       >
-        <div class="section-heading section-heading-wide">
+        <header class="section-heading section-heading-wide">
           <p class="services-lead">
             Ana scrie texte. Texte care vând, pentru orice industrie și orice
             public. Postări, articole, descrieri de produs sau strategii de
@@ -117,7 +121,7 @@
           <h2 id="services-title">
             Sunt intermediarul dintre brandul tău și clienți.
           </h2>
-        </div>
+        </header>
 
         <div class="service-list-column">
           <p class="eyebrow">Scriu bine:</p>
@@ -128,7 +132,9 @@
             <li><span>articole informative și educaționale</span></li>
             <li><span>comunicate de presă</span></li>
             <li><span>conținut SEO scris pentru viitorii tăi clienți</span></li>
-            <li><span>texte de prezentare pentru servicii și branduri</span></li>
+            <li>
+              <span>texte de prezentare pentru servicii și branduri</span>
+            </li>
             <li><span>texte pentru landing page</span></li>
             <li><span>newsletter</span></li>
             <li><span>Bonus: suport în crearea direcției de conținut</span></li>
@@ -170,10 +176,10 @@
       </section>
 
       <section class="industries section" aria-labelledby="industries-title">
-        <div class="section-heading">
+        <header class="section-heading">
           <p class="eyebrow">Nișe &amp; industrii</p>
           <h2 id="industries-title">Scriu pentru:</h2>
-        </div>
+        </header>
         <ul class="industry-list">
           <li>medical &amp; pharma</li>
           <li>turism, travel &amp; HoReCa</li>
@@ -193,7 +199,9 @@
         <p class="industries-note">
           Experiența m-a învățat să înțeleg rapid publicul și să adaptez mesajul
           la nevoile sale.
-          <strong class="industries-emphasis">Experiență care se simte în texte.</strong>
+          <strong class="industries-emphasis">
+            Experiență care se simte în texte.
+          </strong>
         </p>
       </section>
 
@@ -231,10 +239,10 @@
         id="cum-lucram"
         aria-labelledby="collaboration-title"
       >
-        <div class="section-heading">
+        <header class="section-heading">
           <p class="eyebrow">Cum lucrăm</p>
           <h2 id="collaboration-title">Colaborarea cu mine se bazează pe:</h2>
-        </div>
+        </header>
         <ul class="principles">
           <li>✔️ răspuns rapid la feedback (WhatsApp inclus)</li>
           <li>✔️ modificări făcute în timp util</li>
@@ -258,16 +266,13 @@
         </div>
       </section>
 
-      <section
-        class="ai-section section section-blue"
-        aria-labelledby="ai-title"
-      >
-        <div class="section-heading">
+      <section class="section section-blue" aria-labelledby="ai-title">
+        <header class="section-heading">
           <p class="eyebrow">Despre AI</p>
           <h2 id="ai-title">
             Folosesc AI ca instrument de lucru, nu ca sursă de texte.
           </h2>
-        </div>
+        </header>
         <div class="ai-copy">
           <ul>
             <li>suport pentru research</li>
@@ -337,11 +342,31 @@
     <footer class="site-footer">
       <a class="brand" href="#acasa">Ana Stefanel</a>
       <address class="footer-details" aria-label="Contact">
-        <a href="https://wa.me/40746423711" target="_blank" rel="noopener">WhatsApp: 0746 423 711</a>
+        <a href="https://wa.me/40746423711" target="_blank" rel="noopener">
+          WhatsApp: 0746 423 711
+        </a>
         <a href="mailto:ana@plutoadvertising.com">ana@plutoadvertising.com</a>
-        <a href="https://www.facebook.com/share/1K6F8VfrfE/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.linkedin.com/in/ana-ștefănel-652488171?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/anastefanel.ro?stkn=NW5nN29hd3hldzQ5&amp;utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+        <a
+          href="https://www.facebook.com/share/1K6F8VfrfE/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener"
+        >
+          Facebook
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ana-ștefănel-652488171?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://www.instagram.com/anastefanel.ro?stkn=NW5nN29hd3hldzQ5&amp;utm_source=qr"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a>
       </address>
     </footer>
   </body>
